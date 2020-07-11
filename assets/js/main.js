@@ -27,7 +27,7 @@ function getAndSetTime() {
 
   now = new Date();
 
-  $( '.time' ).html( now.getHours() + ":" + now.getMinutes() );
+  $( '.time' ).html( now.getHours() + ":" + ( now.getMinutes() < 10 ? "0" : "" ) + now.getMinutes() );
 
   $( '.seconds' ).html( ( now.getSeconds() < 10 ? "0" : "" ) + now.getSeconds() );
 
