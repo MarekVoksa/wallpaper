@@ -1,0 +1,93 @@
+@font-face
+  font-family: 'UbuntuMono-Bold'
+  src: url('../fonts/UbuntuMono-Bold.ttf')
+
+$c-base: var(--c-base)
+$f-name: var(--f-name)
+$f-size: var(--f-size)
+$clock-size: var(--clock-size)
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.clearfix
+  clear: both
+
+body, html, .app, .background, .image
+  width: 100%
+  height: 100%
+
+.image
+  background-image: url('../images/twerkstallion.jpg')
+  background-position: center
+  background-size: cover
+
+.clock
+  position: absolute
+  top: 0
+  left: $f-size
+  font-family: $f-name
+  font-size: $clock-size
+  color: $c-base
+
+  .time, .seconds
+    float: left
+
+  .seconds
+    position: absolute
+    right: -1em
+    top: 0.3em
+    font-size: calc( #{$clock-size} / 2.5 )
+
+.fakturoid
+  position: absolute
+  top: 1em
+  right: 1.5em
+  font-family: $f-name
+  font-size: $f-size
+  color: $c-base
+
+  .title
+    padding-bottom: 0.5em
+    margin-bottom: 0.5em
+    border-bottom: 0.1em solid
+    border-color: $c-base
+
+    .reload
+      width: 1em
+      height: 1em
+      text-align: center
+      float: right
+      font-size: 1.2em
+      cursor: pointer
+      transition: transform 0.2s
+
+      &:hover
+        transform: scale( 1.1 ) rotate( 180deg )
+
+  .invoices
+
+    .invoice
+
+      div
+        float: left
+
+      .date
+        margin-right: 2em
+
+  .total, .taxes
+    clear: both
+
+  .total
+    padding-top: 0.5em
+    margin-top: 0.5em
+    border-top: 0.1em solid
+    border-color: $c-base
+
+  .sub-title
+    float: left
+
+  .total-amount, .taxes-amount
+    float: right
